@@ -66,7 +66,7 @@ class ScheduleService
         }
 
         $options = [];
-        $options['']= '---Escolha---';
+        $options[null]= '---Escolha---';
 
         foreach($services as $service){
             $options[$service->id] = $service->nome;

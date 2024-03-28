@@ -53,7 +53,8 @@ $routes->group('super', static function ($routes) {
 $routes->group('schedules', static function ($routes) {
     $routes->get('/', [SchedulesController::class, 'index'], ['as' => 'schedules.new']);
     $routes->get('services', [SchedulesController::class, 'dentistaServices'], ['as' => 'get.dentista.servicos']);
-
+    $routes->get('calendar', [SchedulesController::class, 'getCalendar'], ['as' => 'get.calendar']); //recuperamos via fetch API o calendário para o mês desejado
+    $routes->get('hours', [SchedulesController::class, 'getHours'], ['as' => 'get.hours']);//recuperamos via fetch API os horários disponíveis para o dia desejado
    
 });
 
